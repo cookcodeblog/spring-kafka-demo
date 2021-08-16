@@ -7,7 +7,7 @@ public class KafkaConstants {
     // Topics
     public static final String TOPIC_USERS = "users";
 
-    // Customer group
+    // Consumer Group
     public static final String CONSUMER_GROUP = "demo-group";
 
 }
