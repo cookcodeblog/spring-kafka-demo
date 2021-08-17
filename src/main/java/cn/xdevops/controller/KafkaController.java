@@ -18,4 +18,5 @@ public class KafkaController {
     public void sendMessage(@RequestParam("message") String message) {
         producer.sendMessage(message);
     }
+
 }

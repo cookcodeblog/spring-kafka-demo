@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class Consumer {
 
-    @KafkaListener(topics = KafkaConstants.TOPIC_USERS, groupId = KafkaConstants.CONSUMER_GROUP)
+    @KafkaListener(topics = KafkaConstants.TOPIC_GREETING, groupId = KafkaConstants.CONSUMER_GROUP)
     public void consume(String message) {
         log.info(String.format("#### -> Consumed message -> %s", message));
     }
