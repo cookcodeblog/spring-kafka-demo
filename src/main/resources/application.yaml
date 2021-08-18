@@ -2,6 +2,8 @@ server:
   port: 8080
 spring:
   kafka:
+    listener:
+      concurrency: 3
     consumer:
       bootstrap-servers: localhost:9092
       group-id: demo-group
@@ -12,7 +14,7 @@ spring:
         spring.json.trusted.packages: '*'
         spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
         spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
-
+        partition.assignment.strategy: org.apache.kafka.clients.consumer.RoundRobinAssignor
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
